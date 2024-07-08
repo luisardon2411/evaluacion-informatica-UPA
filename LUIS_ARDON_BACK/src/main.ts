@@ -1,5 +1,7 @@
 import { Server } from "./server";
 import { JsonMiddleware, UrlEncodedMiddleware } from './middlewares';
+import { ConfigurationDatabase } from "./configuration";
+import { userRouting } from "./routes";
 
 /**
  * @description Función que inicializa el servidor
@@ -21,13 +23,17 @@ const bootstrap = async (): Promise<void> => {
         // Puerto
         3000,
         // Rutas
-        [],
+        [
+            userRouting
+        ],
         // Middlewares
         [
             JsonMiddleware, 
             UrlEncodedMiddleware
         ]
-    )
+    );
+    
+    await ConfigurationDatabase.initialize();
 }
 
 bootstrap();
