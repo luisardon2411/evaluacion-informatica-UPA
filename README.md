@@ -56,13 +56,12 @@ Asegúrate de tener instalado lo siguiente:
 1. Ejecuta el proyecto en modo desarrollo:
 
     ```bash
-    npm run dev
+    npm run start:dev
     ```
 
 2. Para construir y ejecutar el proyecto en modo producción:
 
     ```bash
-    npm run build
     npm run start:prod
     ```
 
