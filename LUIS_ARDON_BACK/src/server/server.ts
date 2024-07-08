@@ -3,6 +3,7 @@ import { IRouting, IServerConfiguration } from "../interfaces";
 import { Middleware } from '../type';
 import { Log } from '../decorators/log.decorator';
 import { Logger } from '../utils/Logger';
+import cors from 'cors'
 
 
 export class Server implements IServerConfiguration {
@@ -18,6 +19,10 @@ export class Server implements IServerConfiguration {
 
     public setGlobalPrefix(prefix: string): void {
         this.prefix = prefix;
+    }
+
+    public enableCors(origin: Array<string>, methods: Array<string>): void {
+        this.app.use(cors({ origin, methods}));
     }
 
     @Log
