@@ -1,4 +1,4 @@
-import { IsString, IsEmail } from 'class-validator';
+import { IsString, IsEmail, MaxLength, IsNumber, MinLength } from 'class-validator';
 import { IsDateFormat } from '../decorators/date-format-validation.decorator';
 
 export class CreateUsuarioDto {
@@ -10,4 +10,7 @@ export class CreateUsuarioDto {
 
   @IsEmail({},{ message: 'el formato de correo electrónico debe ser valido xxxx@xxx.xx' })
   correo_electronico!: string;
+
+  @IsNumber({}, { message: 'El telefono debe ser un número' })
+  telefono!: string;
 }
