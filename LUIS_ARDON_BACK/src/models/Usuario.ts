@@ -16,10 +16,13 @@ import {
     nombre!: string;
   
     @Column({ type: 'date' })
-    fecha!: string;
+    fecha!: Date;
   
     @Column({ type: 'varchar', length: 60 })
     correo_electronico!: string;
+
+    @Column({ type: 'varchar', length: 15 })
+    telefono!: string;
   
     @Column({ type: 'datetime' })
     creacion!: Date;
