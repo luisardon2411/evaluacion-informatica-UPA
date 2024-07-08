@@ -18,6 +18,7 @@ const bootstrap = async (): Promise<void> => {
     const serverConfiguration = new Server();
 
     serverConfiguration.setGlobalPrefix('/api/v1')
+    serverConfiguration.enableCors(['http://localhost:5173'], ['GET', 'POST', 'PUT', 'DELETE']);
 
     serverConfiguration.start(
         // Puerto
