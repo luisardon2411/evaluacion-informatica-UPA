@@ -17,7 +17,7 @@ export class UserRouting implements IRouting {
 
     public routes(): Router {
 
-        this.router.post('/user/crear-usuario', 
+        this.router.post('/guardar_usuario', 
             validationMiddleware(CreateUsuarioDto),
             this.userController.create
         )
